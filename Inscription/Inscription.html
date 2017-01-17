@@ -42,16 +42,16 @@
   </head>
 <body background="pic/background2.jpg">
 
-	<form class = "centered">
+	<form class = "centered" name ="myForm">
 
 <div class="row">
   <div class="col-sm-4">
 	<label for="usr">Nom:</label>
-  	<input type="text" class="form-control" id="usr" placeholder="Votre nom" required>
+  	<input type="text" class="form-control" id="usr" name="nom" placeholder="Votre nom" required>
 	</div>
   <div class="col-sm-8">
 	<label for="usr">Prénom:</label>
- 	<input type="text" class="form-control" id="usr" placeholder="Votre prénom" required>
+ 	<input type="text" class="form-control" id="usr" name="prenom" placeholder="Votre prénom" required>
 </div>
 </div>
 </div>
@@ -59,7 +59,7 @@
 <div class="row">
 	<div class="col-sm-12">
 	<label for="usr">Email:</label>
- 	<input type="email" class="form-control" id="usr" placeholder="example@gmail.com" required>
+ 	<input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" required>
 	</div>
 </div>
 
@@ -254,13 +254,13 @@
 <div class="row">
 	<div class="col-sm-12">
 	<label for="numerodetel">Numéro de téléphone:</label>
-	<input type="text" class="form-control" id="usr" placeholder="Votre numéro de téléphone  " required>
+	<input type="text" class="form-control" id="telephone" name="telephone" placeholder="Votre numéro de téléphone  " required>
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-12">
 	<label for="metier">Votre métier:</label>
-	<input type="text" class="form-control" id="usr" placeholder="Votre métier  " required>
+	<input type="text" class="form-control" id="metier" name="metier" placeholder="Votre métier  " required>
 	</div>
 </div>
 <div class="row">
@@ -272,7 +272,7 @@
 	<option value="2">Quel est le type de votre première voiture?</option>
 	<option value="3">Quel boisson que vous aimez?</option>
 	</select>
-	<input type="text" class="form-control" id="usr" placeholder="Votre réponse" required>
+	<input type="text" class="form-control" id="reponse" placeholder="Votre réponse" required>
 	</div>
 </div>
 <br>
@@ -283,8 +283,42 @@
 </div>
 <div class="row">
 	<div class="col-sm-12">
-	<button type="submit" name="submit" id="usr">	Créer un compte</button>
+	<button type="submit" name="submit" id="usr" onclick="validate()">	Créer un compte</button>
+  <script >
+     <!--
+        // Form validation code will come here.
+        function validate()
+        {
 
+           if( document.myForm.nom.value == "" )
+           {
+              alert( "Ajoutez votre nom !" );
+              document.myForm.nom.focus() ;
+              return false;
+           }
+           if( document.myForm.prenom.value == "" )
+           {
+              alert( "Ajoutez votre prenom !" );
+              document.myForm.prenom.focus() ;
+              return false;
+           }
+           if( document.myForm.email.value == "" )
+           {
+              alert( "Ajoutez votre email!!" );
+              document.myForm.email.focus() ;
+              return false;
+           }
+
+
+           if( document.myForm.telephone.value == "" )||document.myForm.telephone.value.length >= 8  )
+           {
+              alert( "Ajoutez votre numero de telephone !! Il ne peut pas être moins de 8 numero !!" );
+              return false;
+           }
+           return( true );
+        }
+     //-->
+  </script>
 	</div>
 </div>
 	</form>
