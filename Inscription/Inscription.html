@@ -12,46 +12,82 @@
     <link href="css/common.css" rel="stylesheet">
     <!-- loading both tp1 and tp2 specific files (although one cannot be found) -->
     <script src="js/tp1-o.js" charset="utf-8"></script>
-    <script>
-    function anonnerAjouter() {
-        var x;
-        if (confirm("Press a button!") == true) {
-            x = "Vous réussisez d'ajouter un membre ";
-        }
-        document.getElementById("afficher").innerHTML = x;
-    }
-    </script>
+    
 <script src="js/tp2-o.js" charset="utf-8"></script>
     <link href="css/tp1.css" rel="stylesheet">
     <link href="css/tp2.css" rel="stylesheet">
 	<style>
-	form {
+	.formc {
     background: #f4f7f8;
     border-radius: 8px;
 	text-align:center;
 }
 .centered {
-  position: fixed; /* or absolute */
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 53px;
+    right: 450px;
+    width: 400px;
+    height: 100px;
+    
 }
 
+
+
+	
 	</style>
   </head>
 <body background="pic/background2.jpg">
-
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Notre Site</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="Home.html">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="Apres_inscription.html">Table</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+		<form class="navbar-form navbar-left">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search">
+			<div class="input-group-btn">
+			<button class="btn btn-default" type="submit">
+			<i class="glyphicon glyphicon-search"></i>
+			</button>
+			</div>
+		</div>
+	</form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Inscription.html"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+        <li><a href="Connexion.html"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
 	<form class = "centered">
 
 <div class="row">
   <div class="col-sm-4">
 	<label for="usr">Nom:</label>
-  	<input type="text" class="form-control" id="usr" placeholder="Votre nom" required>
+  	<input type="text" class="form-control" id="usr" placeholder="Votre nom">
 	</div>
   <div class="col-sm-8">
 	<label for="usr">Prénom:</label>
- 	<input type="text" class="form-control" id="usr" placeholder="Votre prénom" required>
+ 	<input type="text" class="form-control" id="usr" placeholder="Votre prénom">
 </div>
 </div>
 </div>
@@ -59,14 +95,14 @@
 <div class="row">
 	<div class="col-sm-12">
 	<label for="usr">Email:</label>
- 	<input type="email" class="form-control" id="usr" placeholder="example@gmail.com" required>
+ 	<input type="email" class="form-control" id="usr" placeholder="example@gmail.com">
 	</div>
 </div>
 
-<div class="row">
+<div class="row" class="formc" >
 	<div class="col-sm-12">
 	<label for="usr">Confirmer e-mail:</label>
-	<input type="email" class="form-control" id="usr" placeholder="Re-entrez l'address e-mail" required>
+	<input type="email" class="form-control" id="usr" placeholder="Re-entrez l'address e-mail">
 	</div>
 </div>
 
@@ -92,7 +128,7 @@
 	<label><input type="radio" name="optradio">Masculin</label>
 	<label><input type="radio" name="optradio">Féminin</label>
 	<label><input type="radio" name="optradio">Autres</label>
-	</div>
+	</div> 
 </div>
 <div class="row">
 	<div class="col-sm-12">
@@ -130,7 +166,7 @@
 	<option value="30">30</option>
 	<option value="31">31</option>
 	</select>
-
+	
 	<select name="mm" id="mois">
 	<option value selected disabled>Mois</option>
 	<option value="January">January</option>
@@ -146,7 +182,7 @@
 	<option value="November">November</option>
 	<option value="December">December</option>
 	</select>
-
+	
 	<select name="aa" id="an">
 	<option value selected disabled>Année</option>
 	<option value="1920">1920</option>
@@ -254,13 +290,13 @@
 <div class="row">
 	<div class="col-sm-12">
 	<label for="numerodetel">Numéro de téléphone:</label>
-	<input type="text" class="form-control" id="usr" placeholder="Votre numéro de téléphone  " required>
+	<input type="text" class="form-control" id="usr" placeholder="Votre numéro de téléphone  ">
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-12">
 	<label for="metier">Votre métier:</label>
-	<input type="text" class="form-control" id="usr" placeholder="Votre métier  " required>
+	<input type="text" class="form-control" id="usr" placeholder="Votre métier  ">
 	</div>
 </div>
 <div class="row">
@@ -272,19 +308,20 @@
 	<option value="2">Quel est le type de votre première voiture?</option>
 	<option value="3">Quel boisson que vous aimez?</option>
 	</select>
-	<input type="text" class="form-control" id="usr" placeholder="Votre réponse" required>
+	<input type="text" class="form-control" id="usr" placeholder="Votre réponse">
 	</div>
 </div>
 <br>
 <div class="row">
 	<div class="col-sm-12">
-	<label><input type="checkbox" name="optradio" required>Accepter avec notre Conditions et Politique d'utilisation</label>
+	<label><input type="checkbox" name="optradio">Accepter avec notre Conditions et Politique d'utilisation</label>
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-12">
-	<button type="submit" name="submit" id="usr">	Créer un compte</button>
-
+	<button type="submit" name="submit" id="usr">
+	<a href = "Apres_inscription.html">Créer un compte</a></button>
+	
 	</div>
 </div>
 	</form>
