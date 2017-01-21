@@ -60,6 +60,42 @@
         </li>
         <li><a href="Apres_inscription.html">Table de utilisateurs</a></li>
       </ul>
+      <ul class="navbar-form navbar-left">
+  		<div class="input-group">
+  			<input type="text" class="form-control" id='kw' placeholder="Verifier Utilisateur ">
+  			<div class="input-group-btn">
+  			<button onclick="search()" class="btn btn-default " type="submit">
+          <script>
+          function search()
+          {
+              var k = 0 ;
+              var kw = document.getElementById('kw').value;
+              var table = document.getElementById("table");
+              var tr = table.getElementsByTagName('TR');
+              for(var i = 0; i < tr.length; i++){
+                var td = tr[i].getElementsByTagName('TD');
+                for(var j = 0; j < td.length; j++){
+                  if( td[j].innerHTML == kw)
+                  {
+                       alert( "Utilisateur existe" );
+                       k = 1;
+                       return false;
+                  }
+                }
+              }
+              if (k == 0)
+              {
+                alert( "pas trouvé de utilisateur");
+                return false;
+              }
+
+          }
+          </script>
+  			<i class="glyphicon glyphicon-search"></i>
+
+  			</div>
+  		</div>
+  	</ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Inscription.html"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
         <li><a href="Home.html"><span class="glyphicon glyphicon-log-in"></span> Dé-connexion</a></li>
@@ -71,15 +107,14 @@
   <h2>Liste des utilisateurs</h2>
 
 
-    <thead >
+
       <table class ="table">
         <th>Nom</th>
         <th>Pr�nom</th>
         <th>Email</th>
       </table>
-    </thead>
+
     <table id="table" class="table">
-    <tbody>
       <tr>
         <td>Default</td>
         <td>Defaultson</td>
@@ -110,7 +145,7 @@
         <td>Activeson</td>
         <td>act@example.com</td>
       </tr>
-    </tbody>
+
   </table>
 
   <p>
