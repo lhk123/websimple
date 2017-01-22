@@ -358,11 +358,86 @@
               document.myForm.email.focus() ;
               return false;
            }
-
+			if( document.myForm.cf-email.value == "" )
+           {
+              alert( "Ajoutez votre email!!" );
+              document.myForm.cf-email.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.pass.value == "" )
+           {
+              alert( "Ajoutez votre mot de pass!!" );
+              document.myForm.pass.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.password.value == "" )
+           {
+              alert( "Ajoutez votre mot de pass!!" );
+              document.myForm.password.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.optradio.value == "" )
+           {
+              alert( "Choisisez-vous le sexe!!" );
+              document.myForm.optradio.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.dd.value == "" )
+           {
+              alert( "Choisisez-vous le jour!!" );
+              document.myForm.dd.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.mm.value == "" )
+           {
+              alert( "Choisisez-vous le mois!!" );
+              document.myForm.mm.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.aa.value == "" )
+           {
+              alert( "Choisisez-vous l'année!!" );
+              document.myForm.aa.focus() ;
+              return false;
+           }
 
            if( document.myForm.telephone.value == "" )||document.myForm.telephone.value.length >= 10 )
            {
               alert( "Ajoutez votre numero de telephone !! Il ne peut pas être moins de 10 numero !!" );
+              return false;
+           }
+		   
+		   if( document.myForm.metier.value == "" )
+           {
+              alert( "Ajoutez votre métier!!" );
+              document.myForm.metier.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.question.value == "" )
+           {
+              alert( "Choisisez-vous une question!!" );
+              document.myForm.question.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.reponse.value == "" )
+           {
+              alert( "Ajoutez votre réponse!!" );
+              document.myForm.reponse.focus() ;
+              return false;
+           }
+		   
+		   if( document.myForm.check.value == "" )
+           {
+              alert( "Il faut l'accepter pour créer un compte!!" );
+              document.myForm.check.focus() ;
               return false;
            }
            return( true );
