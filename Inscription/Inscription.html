@@ -53,11 +53,11 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Photos <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="SlideShow.html">Diaporama</a></li>
-              <li><a href="#">Page 1-2</a></li>
+              <li><a href="Liste.html">Liste</a></li>
               <li><a href="#">Page 1-3</a></li>
             </ul>
           </li>
-          <li><a href="Apres_inscription.html">Table de utilisateurs</a></li>
+          <li><a href="Apres_inscription.html">Table des utilisateurs</a></li>
 
         </ul>
 
@@ -88,9 +88,7 @@
 	<label for="usr">Prénom:</label>
  	<input type="text" class="form-control" id="usr" name="prenom" placeholder="Votre prénom" required>
 	</div>
-  <div class="col-sm-8">
-	<label for="usr">Prénom:</label>
- 	<input type="text" class="form-control" id="usr" placeholder="Votre prénom">
+  
 
 </div>
 </div>
@@ -109,7 +107,7 @@
 <div class="row" class="formc" >
 	<div class="col-sm-12">
 	<label for="usr">Confirmer e-mail:</label>
-	<input type="email" class="form-control" id="usr" placeholder="Re-entrez l'address e-mail">
+	<input type="email" class="form-control" id="usr" name="cf-email" placeholder="Re-entrez l'address e-mail">
 	</div>
 </div>
 
@@ -323,19 +321,19 @@
 	<option value="3">Quel boisson que vous aimez?</option>
 	</select>
 
-	<input type="text" class="form-control" id="reponse" placeholder="Votre réponse" required>
+	<input type="text" class="form-control" id="reponse" name="reponse" placeholder="Votre réponse" required>
 	</div>
 </div>
 <br>
 <div class="row">
 	<div class="col-sm-12">
-	<label><input type="checkbox" name="optradio">Accepter avec notre Conditions et Politique d'utilisation</label>
+	<label><input type="checkbox" name="check">Accepter avec notre Conditions et Politique d'utilisation</label>
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-12">
+	
 
-	<button type="submit" name="submit" id="usr" onclick="validate()">	Créer un compte</button>
+	
   <script >
      <!--
         // Form validation code will come here.
@@ -362,20 +360,21 @@
            }
 
 
-           if( document.myForm.telephone.value == "" )||document.myForm.telephone.value.length >= 8  )
+           if( document.myForm.telephone.value == "" )||document.myForm.telephone.value.length >= 10 )
            {
-              alert( "Ajoutez votre numero de telephone !! Il ne peut pas être moins de 8 numero !!" );
+              alert( "Ajoutez votre numero de telephone !! Il ne peut pas être moins de 10 numero !!" );
               return false;
            }
            return( true );
         }
      //-->
   </script>
-
-	<button type="submit" name="submit" id="usr">
-	<a href = "Apres_inscription.html">Créer un compte</a></button>
-
-
+	<div class="col-sm-12">
+	<center
+		<form method="POST" action="Apres_inscription.html">
+		<input type="submit" value="Créer un compte">
+		</form></center>
+		</div>
 	</div>
 </div>
 	</form>
