@@ -340,12 +340,20 @@
 <div class="row">
 	<div class="col-sm-12">
 	<label for="metier">Votre métier:</label>
-
-	<input type="text" class="form-control" id="metier" name="metier" placeholder="Votre métier  " required>
-
-
+	<input list="metier" name="metier">
+		<datalist id="metier">
+		<option value="Professeur">
+		<option value="Étudiant">
+		<option value="Lecturer">
+		<option value="Footballeur">
+		<option value="Médecin">
+		<option value="Agriculteur">
+		<option value="Conduiteur">
+		<option value="Employée">
+	</datalist>
 	</div>
 </div>
+
 <br>
 <div class="row">
 	<div class="col-sm-12">
