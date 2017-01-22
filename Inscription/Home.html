@@ -55,11 +55,46 @@
           <ul class="dropdown-menu">
             <li><a href="SlideShow.html">Diaporama</a></li>
             <li><a href="Liste.html">Liste</a></li>
-            <li><a href="#">Page 1-3</a></li>
           </ul>
         </li>
         <li><a href="Apres_inscription.html">Table des utilisateurs</a></li>
       </ul>
+	  <ul class="navbar-form navbar-left">
+  		<div class="input-group">
+  			<input type="text" class="form-control" id='kw' placeholder="Verifier Utilisateur d'email">
+  			<div class="input-group-btn">
+  			<button onclick="search()" class="btn btn-default " type="submit">
+          <script>
+          function search()
+          {
+              var k = 0 ;
+              var kw = document.getElementById('kw').value;
+              var table = document.getElementById("table");
+              var tr = table.getElementsByTagName('TR');
+              for(var i = 0; i < tr.length; i++){
+                var td = tr[i].getElementsByTagName('TD');
+                for(var j = 0; j < td.length; j++){
+                  if( td[j].innerHTML == kw)
+                  {
+                       alert( "Utilisateur d'email existe" );
+                       k = 1;
+                       return false;
+                  }
+                }
+              }
+              if (k == 0)
+              {
+                alert( "pas trouvé de utilisateur");
+                return false;
+              }
+
+          }
+          </script>
+  			<i class="glyphicon glyphicon-search"></i>
+
+  			</div>
+  		</div>
+  	</ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Inscription.html"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
         <li><a href="Connexion.html"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
