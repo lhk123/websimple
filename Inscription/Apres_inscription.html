@@ -13,7 +13,74 @@
     <link href="css/common.css" rel="stylesheet">
     <!-- loading both tp1 and tp2 specific files (although one cannot be found) -->
     <script src="js/tp1-o.js" charset="utf-8"></script>
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter,table, tr, td, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById('table');
+      tr = table.getElementsByTagName('tr');
 
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+
+      }
+    }
+    function myFunction11() {
+      // Declare variables
+      var input1, filter1,table, tr, td, i;
+      input1 = document.getElementById("myInput1");
+      filter1 = input1.value.toUpperCase();
+      table = document.getElementById('table');
+      tr = table.getElementsByTagName('tr');
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td1 = tr[i].getElementsByTagName("td")[1];
+
+        if (td1) {
+          if (td1.innerHTML.toUpperCase().indexOf(filter1) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+
+      }
+    }
+    function myFunction22() {
+      // Declare variables
+      var input, filter,table, tr, td, i;
+      input = document.getElementById("myInput2");
+      filter = input.value.toUpperCase();
+      table = document.getElementById('table');
+      tr = table.getElementsByTagName('tr');
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td1 = tr[i].getElementsByTagName("td")[2];
+
+        if (td1) {
+          if (td1.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+
+      }
+    }
+    </script>
 <script src="js/tp2-o.js" charset="utf-8"></script>
     <link href="css/tp1.css" rel="stylesheet">
     <link href="css/tp2.css" rel="stylesheet">
@@ -59,7 +126,7 @@
         </li>
         <li><a href="Apres_inscription.html">Table des utilisateurs</a></li>
       </ul>
-      <ul class="navbar-form navbar-left">
+  <!--    <ul class="navbar-form navbar-left">
   		<div class="input-group">
   			<input type="text" class="form-control" id='kw' placeholder="Verifier Utilisateur d'email">
   			<div class="input-group-btn">
@@ -94,7 +161,7 @@
 
   			</div>
   		</div>
-  	</ul>
+  	</ul>-->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Inscription.html"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
         <li><a href="Home.html"><span class="glyphicon glyphicon-log-in"></span> Dé-connexion</a></li>
@@ -107,7 +174,15 @@
 
 
 
-      <table class ="table">
+      <tr>
+		<div class="col-sm-3">
+        <td><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cherchez par nom.."></td></div>
+		<div class="col-sm-3">
+        <td><input type="text" id="myInput1" onkeyup="myFunction11()" placeholder="Cherchez par prenom.."></td></div>
+		<div class="col-sm-3">
+        <td><input type="text" id="myInput2" onkeyup="myFunction22()" placeholder="Cherchez par email.."></td></div>
+      </tr>
+    <table id="table" class="table">
 		<thead>
 			<tr>
 				<th>Nom</th>
@@ -115,7 +190,7 @@
 				<th>Email</th>
 			<tr>
 		</thead>
-      
+
 
     <tbody>
       <tr>
